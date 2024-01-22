@@ -25,7 +25,9 @@ const HomeScreen = ({navigation}) => {
       name: 'Unless you are highly experienced and committed to working out, you will get overwhelmed if you exceed a certain threshold. ',
       //imageUrl: require('../assets/horizontal1.webp')
       //imageUrl: 'https://example.com/item1.jpg',
-      buttonName:"Interested"
+      backgroundImageSource:require('../assets/bgImage.webp'),
+      buttonName:"Interested",
+     
 
     },
     {
@@ -33,6 +35,7 @@ const HomeScreen = ({navigation}) => {
       topic: 'LOWER BODY 7X4 CHALLENGE',
       name: 'Unless you are highly experienced and committed to working out, you will get overwhelmed if you exceed a certain threshold. ',
      // imageUrl: 'https://example.com/item1.jpg',
+     backgroundImageSource:require('../assets/bgImage.webp'),
       buttonName:"Interested"
 
     },
@@ -48,7 +51,8 @@ const HomeScreen = ({navigation}) => {
       topic: 'FDX Basketball Performence',
       date:"Aug 7-13",
       participants: 22,
-      buttonName:"Interested"
+      buttonName:"Interested",
+      
     },
     {
       id: '2',

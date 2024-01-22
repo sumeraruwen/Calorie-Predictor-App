@@ -1,6 +1,6 @@
 // src/WelcomeScreen.js
 import React from 'react';
-import { View, Text, StyleSheet, Image, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, Button, TouchableOpacity,ImageBackground } from 'react-native';
 import ButtonComponent from '../components/ButtonComponent';
 
 import {
@@ -11,12 +11,15 @@ import {
 const WelcomeScreen = ({ navigation }) => {
 
     const customStyles = {
-        backgroundColor: '#FE3F3F',
+        backgroundColor: 'white',
         width: dimensions.widthLevel12,
         borderRadius: 20,
        // height:dimensions.heightLevel3,
        textHeight: fontSizes.fontMediumPlus,
         marginTop:'13%',
+       color:"black",
+       fontWeight: 'bold',
+
         
       };
 
@@ -26,10 +29,20 @@ const WelcomeScreen = ({ navigation }) => {
       };
 
   return (
+<ImageBackground
+      source={require('../assets/bgImage.webp')} // Replace with the path to your background image
+      style={styles.backgroundImage}
+    >
+    
     <View style={styles.container}>
-     
-      <Text style={styles.text}>Welcome to FitAdapt Pro</Text>
-      <Text style={styles.text2}>you can make new friends and create events with us, join with quick team today ..!</Text>
+    <View style={styles.textContainer}>
+      <Text style={styles.text}>Stay Fit.</Text>
+      <Text style={styles.text}>Stay Strong.</Text>
+      <Text style={styles.text}>Stay Healthy.</Text>
+
+      <Text style={styles.text2}>Physical fitness is generally achieved through proper nutrition, 
+      moderate-vigorous physical exercise, physical activity, and sufficient rest. ..!</Text>
+      </View>
       
       <ButtonComponent
         text="Get Started"
@@ -50,6 +63,7 @@ const WelcomeScreen = ({ navigation }) => {
       /> */}
  
     </View>
+    </ImageBackground>
   );
 };
 
@@ -57,20 +71,31 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor:colors.white
+    justifyContent: 'center', // Align the button to the bottom
+   paddingBottom: '10%', // Add padding at the bottom for better spacing
+  //  paddingHorizontal:'20%'
+  },
+  textContainer: {
+    alignItems: 'flex-start', // Align text to the left side
+   marginTop:"62%"
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover', // or 'stretch' for different cover options
   },
   text: {
-    fontSize: fontSizes.fontXXXLarge,
+    fontSize: fontSizes.fontXXXXLarge,
     fontWeight: 'bold',
-    marginTop: '20%',
-    color:colors.black
+    marginTop: '3%',
+    color:colors.white,
+    
   },
   text2: {
     fontSize: fontSizes.fontMidMedium,
-    marginTop: '13%',
-    color:colors.black,
+    marginTop: '8%',
+    color:colors.white,
     width:dimensions.widthLevel3,
-    textAlign: 'center',
+   // textAlign: 'center',
   },
   bottomRightImage: {
     position: 'absolute', // Position the image absolutely
@@ -84,6 +109,7 @@ const styles = StyleSheet.create({
     height:360,
     left:-10
   },
+ 
   
  
 });

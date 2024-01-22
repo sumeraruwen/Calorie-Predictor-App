@@ -1,7 +1,7 @@
 // CustomButton.js
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { fontSizes } from '../styles/constants';
+import { colors, fontSizes } from '../styles/constants';
 
 const ButtonComponent = ({
   text,
@@ -18,6 +18,9 @@ const ButtonComponent = ({
 
   const textStyles = {
     fontSize: customStyles.textHeight || 17,
+    color:customStyles.color|| colors.black,
+    fontWeight: '500',
+
   };
 
   return (

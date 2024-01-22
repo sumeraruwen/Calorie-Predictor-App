@@ -6,11 +6,12 @@ import { colors, dimensions,fontSizes } from '../styles/constants';
 const SignInScreen = ({navigation}) => {
 
     const customStyles = {
-        backgroundColor: '#FE3F3F',
+        backgroundColor: 'black',
         width: dimensions.widthLevel13,
         borderRadius: 12,
         textHeight: fontSizes.fontLarge,
         marginTop:'23%',
+        color:"white"
        
       };
 
@@ -95,7 +96,7 @@ const SignInScreen = ({navigation}) => {
         <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: '9%',justifyContent:'center' }}>
         <Text style={{color:colors.black,fontSize:fontSizes.fontMidMedium}}>Don't Have an Account ? </Text>
         <TouchableOpacity onPress={handleSignUp}>
-        <Text style={{color:colors.primary,fontSize:fontSizes.fontMidMedium,fontWeight:'bold'}}>Sign Up</Text>
+        <Text style={{color:'#37B47E',fontSize:fontSizes.fontMidMedium,fontWeight:'bold'}}>Sign Up</Text>
         </TouchableOpacity>
         </View>
       </View>
@@ -134,7 +135,7 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.fontXXXLarge,
     marginBottom: '2%',
     fontWeight:'bold',
-    color: colors.primary,
+    color: colors.black,
   },
   inputContainer: {
     marginBottom: '6%',
@@ -156,7 +157,7 @@ const styles = StyleSheet.create({
     width: 17,
     height: 17,
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: '#37B47E',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: '3%',
@@ -164,13 +165,15 @@ const styles = StyleSheet.create({
   rememberText: {
     fontSize: fontSizes.fontMedium,
     marginRight: 'auto',
-    color: colors.black,
+    color: '#37B47E',
+    fontWeight:'500'
    
   },
   forgetPasswordText: {
     fontSize: fontSizes.fontMedium,
     marginLeft: 'auto',
-    color: colors.primary,
+    color: '#37B47E',
+    fontWeight:'500'
     
   },
   // passwordInput: {

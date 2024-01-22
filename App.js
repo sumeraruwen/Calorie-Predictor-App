@@ -121,6 +121,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import React,{useEffect} from 'react'
 import {View,Text,StyleSheet,Button, Linking, ScrollView, RefreshControl, FlatList, SectionList, TextInput, ImageBackground, Image} from 'react-native'
 import { SafeAreaView } from 'react-native';
+import SplashScreen from 'react-native-splash-screen'
+
 import SignInScreen from './src/views/SignIn';
 import SignUpScreen1 from './src/views/SignUpScreen1';
 import SignUpScreen2 from './src/views/SignUpScreen2';
@@ -139,7 +141,7 @@ import StackNavigation from './src/navigation/StackNavigation';
 const App =() =>{
   useEffect(() => {
    
-    //  SplashScreen.hide();
+      SplashScreen.hide();
     
   }, []);
  

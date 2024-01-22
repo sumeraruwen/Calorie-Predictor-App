@@ -23,6 +23,10 @@ const PredictScreen = ({navigation}) => {
   const handleInputChange = (name, value) => {
     setInputs({ ...inputs, [name]: value });
   };
+  const handleViewDietPlan = () => {
+    // Navigate to the DietPlanScreen and pass predicted calories as a parameter
+    navigation.navigate('DietPlanScreen', { predictedCalories: calories });
+  };
 
   const predictCalories = async () => {
    
@@ -95,6 +99,9 @@ const PredictScreen = ({navigation}) => {
       {/* Add similar TextInput components for other input fields */}
       <Button title="Predict Calories" onPress={predictCalories} />
       {calories !== null && <Text>Predicted Calories: {calories}</Text>}
+
+       {/* Add a button for viewing diet plans */}
+       <Button title="View Diet Plan" onPress={handleViewDietPlan} />
     </View>
   );
 };

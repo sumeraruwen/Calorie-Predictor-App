@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet,TouchableOpacity} from 'react-native';
+import { View, Text, Image, StyleSheet,TouchableOpacity,ImageBackground} from 'react-native';
 import { dimensions } from '../styles/constants';
 import ButtonComponent from './ButtonComponent';
 
-const HorizontalCardComponent = ({ name, topic ,buttonName}) => {
+const HorizontalCardComponent = ({ name, topic ,buttonName,backgroundImageSource }) => {
   return (
+   
+
     <View style={styles.card}>
       {/* <Image source={{ uri: imageUrl }} style={styles.image} /> */}
       {/* <Image  source={require('../assets/horizontal2.webp')} style={styles.image} /> */}
@@ -13,7 +15,7 @@ const HorizontalCardComponent = ({ name, topic ,buttonName}) => {
     
       <Text style={styles.topic}>{topic}</Text>
       <Text style={styles.name}>{name}</Text>
-      <View style={{padding: dimensions.paddingLevel6, flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      {/* <View style={{padding: dimensions.paddingLevel6, flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <TouchableOpacity
             style={styles.interestedButton}
             onPress={() => {
@@ -22,9 +24,11 @@ const HorizontalCardComponent = ({ name, topic ,buttonName}) => {
           >
             <Text style={styles.interestedButtonText}>{buttonName}</Text>
           </TouchableOpacity>
-      </View>
+      </View> */}
       </View>
     </View>
+  
+    
   );
 };
 
@@ -37,9 +41,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius:15,
+    backgroundColor:'#37B47E'
+    
     
     //padding: 10,
   },
+ 
   image: {
     width: dimensions.widthLevel10,
     height: dimensions.heightLevel9,
@@ -48,12 +55,12 @@ const styles = StyleSheet.create({
     
   },
   name: {
-    color: 'gray',
+    color: 'white',
     marginTop: dimensions.paddingLevel4,
 
   },
   topic: {
-    color: '#000',
+    color: 'white',
     fontWeight:'500',
     marginTop: 2,
     fontSize:20,
@@ -81,9 +88,10 @@ const styles = StyleSheet.create({
     
   },
   interestedButtonText: {
-    color: 'white',
+    color: 'black',
     textAlign: 'center',
   },
+ 
 });
 
 export default HorizontalCardComponent;
