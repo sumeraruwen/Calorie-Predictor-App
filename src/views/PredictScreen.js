@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import axios from 'axios';
+import { colors, dimensions, fontSizes } from '../styles/constants';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 //const apiUrl = 'http://127.0.0.1:8000//predict_calories'; 
-const apiUrl = 'http://192.168.1.104:8000/predict_calories';
+const apiUrl = 'http://192.168.1.101:8000/predict_calories';
 
 const PredictScreen = ({navigation}) => {
   const [inputs, setInputs] = useState({
@@ -60,48 +62,71 @@ const PredictScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text>Calorie Predictor App</Text>
+       <Text style={styles.heading1}>Congratulations you are sucessfully completed the exercises ..!</Text>
+      <Text style={styles.heading2}>CHECK YOUR CALORIES</Text>
       <TextInput
         placeholder="Gender"
         value={inputs.Gender}
+        style={styles.textInput}
         onChangeText={(text) => handleInputChange('Gender', text)}
       />
        <TextInput
         placeholder="Age"
         value={inputs.Age}
+        style={styles.textInput}
         onChangeText={(text) => handleInputChange('Age', text)}
       />
        <TextInput
         placeholder="Height"
         value={inputs.Height}
+        style={styles.textInput}
         onChangeText={(text) => handleInputChange('Height', text)}
       />
        <TextInput
         placeholder="Weight"
         value={inputs.Weight}
+        style={styles.textInput}
         onChangeText={(text) => handleInputChange('Weight', text)}
       />
        <TextInput
         placeholder="Duration"
         value={inputs.Duration}
+        style={styles.textInput}
         onChangeText={(text) => handleInputChange('Duration', text)}
       />
         <TextInput
         placeholder="HeartRate"
         value={inputs.Heart_rate}
+        style={styles.textInput}
         onChangeText={(text) => handleInputChange('Heart_rate', text)}
       />
         <TextInput
         placeholder="BodyTemperature"
         value={inputs.Body_temp}
+        style={styles.textInput}
         onChangeText={(text) => handleInputChange('Body_temp', text)}
       />
+     
+     {calories !== null && <Text style={styles.text}>Predicted Calories: {calories}</Text>}
+     <View
+     style={{flexDirection:'row',justifyContent:'center',textAlign:'center'}}
+     >
+      
       {/* Add similar TextInput components for other input fields */}
-      <Button title="Predict Calories" onPress={predictCalories} />
-      {calories !== null && <Text>Predicted Calories: {calories}</Text>}
+      <TouchableOpacity  onPress={predictCalories} style={styles.button} >
+        <Text style={styles.buttonText}>Predict Calories</Text>
+        </TouchableOpacity>
+      {/* {calories !== null && <Text>Predicted Calories: {calories}</Text>} */}
 
        {/* Add a button for viewing diet plans */}
-       <Button title="View Diet Plan" onPress={handleViewDietPlan} />
+       <TouchableOpacity  onPress={handleViewDietPlan} style={styles.button2} >
+       <Text style={styles.buttonText}>View Diet Plan</Text>
+         </TouchableOpacity>
+      
+       </View>
+
+      
+
     </View>
   );
 };
@@ -111,6 +136,61 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  textInput:{
+    borderWidth: 1,
+    borderRadius: 5,
+    //padding:10,
+    width:200,
+    marginBottom:20,
+    borderColor: 'gray',
+  },
+  heading2:{
+    color: 'black',
+    fontSize: fontSizes.fontLarge,
+    fontWeight: 'bold',  
+   // marginTop:'100%',
+    marginBottom:'5%'
+  },
+  heading1:{
+    color: 'red',
+    fontSize: fontSizes.fontMidMedium,
+   // fontWeight: 'bold',  
+   // marginTop:'100%',
+    marginBottom:'5%'
+  },
+  text: {
+    color: 'black',
+    fontSize: fontSizes.fontMediumPlus,
+    marginTop: '5%',
+    marginBottom:'5%'
+   // fontSize:fontSizes.fontMedium
+  },
+  button: {
+    backgroundColor: '#0000CD',
+    height: 45,
+    borderRadius: 8,
+    width:150,
+    marginTop: '10%',
+    justifyContent:'center',
+    alignItems: 'center',
+    margin:10
+  },
+  button2: {
+    backgroundColor: '#37B47E',
+    height: 45,
+    borderRadius: 8,
+    width:150,
+    marginTop: '10%',
+    justifyContent:'center',
+    alignItems: 'center',
+    margin:10
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '500',
+    
   },
 });
 

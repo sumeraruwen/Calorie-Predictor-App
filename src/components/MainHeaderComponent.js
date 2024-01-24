@@ -53,7 +53,7 @@ const MainHeaderComponent = ({userImage }) => {
         /> */}
         </TouchableOpacity>
       
-      <Text style={{ flex: 1, textAlign: 'center', fontWeight: '500',color:colors.primary,fontSize:fontSizes.fontXLarge }}>
+      <Text style={{ flex: 1, textAlign: 'center', fontWeight: '700',color:"#000",fontSize:fontSizes.fontXXLarge }}>
        FitAdapt Pro
       </Text>
       {/* <Image

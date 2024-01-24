@@ -8,6 +8,10 @@ const HorizontalCardComponent = ({ name, topic ,buttonName,backgroundImageSource
    
 
     <View style={styles.card}>
+      <ImageBackground
+      source={require('../assets/bg3.webp')} // Replace with the path to your background image
+      style={styles.backgroundImage}
+    >
       {/* <Image source={{ uri: imageUrl }} style={styles.image} /> */}
       {/* <Image  source={require('../assets/horizontal2.webp')} style={styles.image} /> */}
        
@@ -26,6 +30,7 @@ const HorizontalCardComponent = ({ name, topic ,buttonName,backgroundImageSource
           </TouchableOpacity>
       </View> */}
       </View>
+      </ImageBackground>
     </View>
   
     
@@ -41,10 +46,15 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius:15,
-    backgroundColor:'#37B47E'
-    
+    //backgroundColor:'#37B47E',
+    overflow: 'hidden',
     
     //padding: 10,
+  },
+  backgroundImage: {
+    width: '100%', // Cover the entire width of the card
+    height: '100%', // Cover the entire height of the card
+    resizeMode: 'cover', // Maintain aspect ratio while covering the entire space
   },
  
   image: {
@@ -91,6 +101,10 @@ const styles = StyleSheet.create({
     color: 'black',
     textAlign: 'center',
   },
+  // backgroundImage: {
+  //   flex: 1,
+  //   resizeMode: 'cover', // or 'stretch' for different cover options
+  // },
  
 });
 

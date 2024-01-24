@@ -1,11 +1,15 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { dimensions } from '../styles/constants';
+import { View, Text, Image, TouchableOpacity, StyleSheet,ImageBackground } from 'react-native';
+import { dimensions, fontSizes } from '../styles/constants';
 
 const SliderCardComponent = ({ category, topic, date, participants,buttonName }) => {
   return (
   
     <View style={styles.card}>
+       <ImageBackground
+      source={require('../assets/bg5.webp')} // Replace with the path to your background image
+      style={styles.backgroundImage}
+    >
       {/* <Image
        source={require('../assets/horizontal1.webp')}
         style={styles.sliderImage}
@@ -21,7 +25,7 @@ const SliderCardComponent = ({ category, topic, date, participants,buttonName })
        
        
       </View>
-     
+      </ImageBackground>
     </View>
     
   );
@@ -34,11 +38,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 20,
-    margin: 20,
+    marginLeft: 20,
+    marginRight:20,
+    marginTop:20,
+    
     flexDirection: 'column',
     alignContent:'center',
+    overflow: 'hidden',
    
-   
+  },
+  backgroundImage: {
+    width: '100%', // Cover the entire width of the card
+    height: '100%', // Cover the entire height of the card
+    resizeMode: 'cover', // Maintain aspect ratio while covering the entire space
   },
   sliderImage: {
     width: '100%',
@@ -51,59 +63,22 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   category: {
-    color: 'gray',
+    color: 'white',
   },
   topic: {
-    fontWeight:'500',
-    color: '#000',
-    marginTop: 2,
+    fontWeight:'700',
+    color: 'white',
+    marginTop: '5%',
+    marginLeft:'5%',
+    fontSize:fontSizes.fontXXXLarge
   },
   date: {
-    color: 'gray',
-    marginTop: 5,
-  },
-  participantsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 5,
-    justifyContent: 'space-between',
-  },
-  participants: {
-    color: '#000',
-    marginTop: 5,
-  },
-  interestedButton: {
-    backgroundColor: '#FE3F3F', // Blue color, you can change it
-    borderRadius: 20,
-    padding: 5,
-    width: 130, // Set the desired width
-    height: 38, // Set the desired height
-    justifyContent: 'center', // Center the button content vertically
-    alignItems: 'center', // Center the button content horizontally
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.8,
-    shadowRadius: 1,
-    elevation: 5, 
-
-    //marginTop: 10,
-    
-  },
-  interestedButtonText: {
     color: 'white',
-    textAlign: 'center',
+    marginTop: 3,
+    marginLeft:'5%',
   },
-  line: {
-    height: 1, // Adjust the height of the line as needed
-    width: '100%', // Adjust the width of the line as needed
-    backgroundColor: '#ccc',// Adjust the line color as needed
-   // marginHorizontal: 20, // Adjust the margin as needed
-  marginTop:6,
-   marginBottom:4,
-  // marginVertical: '10%',
-  },
+ 
+  
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',

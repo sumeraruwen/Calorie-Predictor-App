@@ -18,7 +18,7 @@ const WelcomeScreen = ({ navigation }) => {
        textHeight: fontSizes.fontMediumPlus,
         marginTop:'13%',
        color:"black",
-       fontWeight: 'bold',
+      
 
         
       };
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
   text2: {
     fontSize: fontSizes.fontMidMedium,
-    marginTop: '8%',
+    marginTop: '15%',
     color:colors.white,
     width:dimensions.widthLevel3,
    // textAlign: 'center',

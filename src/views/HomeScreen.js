@@ -14,9 +14,14 @@ const HomeScreen = ({navigation}) => {
     
   };
   const handlePredict = () => {
-    navigation.navigate('PredictScreen');
+   // navigation.navigate('PredictScreen');
     
   };
+  const handleExerciseScreen1 = () => {
+    // navigation.navigate('PredictScreen');
+    navigation.navigate('ExerciseScreen1');
+     
+   };
   
   const recommendedItems = [
     {
@@ -25,7 +30,7 @@ const HomeScreen = ({navigation}) => {
       name: 'Unless you are highly experienced and committed to working out, you will get overwhelmed if you exceed a certain threshold. ',
       //imageUrl: require('../assets/horizontal1.webp')
       //imageUrl: 'https://example.com/item1.jpg',
-      backgroundImageSource:require('../assets/bgImage.webp'),
+      backgroundImage:require('../assets/bgImage.webp'),
       buttonName:"Interested",
      
 
@@ -35,7 +40,7 @@ const HomeScreen = ({navigation}) => {
       topic: 'LOWER BODY 7X4 CHALLENGE',
       name: 'Unless you are highly experienced and committed to working out, you will get overwhelmed if you exceed a certain threshold. ',
      // imageUrl: 'https://example.com/item1.jpg',
-     backgroundImageSource:require('../assets/bgImage.webp'),
+     backgroundImage:require('../assets/bgImage.webp'),
       buttonName:"Interested"
 
     },
@@ -48,27 +53,24 @@ const HomeScreen = ({navigation}) => {
     {
       id: '1',
       category: 'Somerset',
-      topic: 'FDX Basketball Performence',
-      date:"Aug 7-13",
-      participants: 22,
-      buttonName:"Interested",
+      topic: 'ABS BEGINEER',
+      date:"4 EXERCISES",
+      
       
     },
     {
       id: '2',
       category: 'Somerset',
-      topic: 'FDX Basketball Performence',
-      date:"Aug 7-13",
-      participants: 35,
-      buttonName:"Interested"
+      topic: 'CHEST BEGINEER',
+      date:"2 EXERCISES",
+ 
     },
     {
       id: '3',
       category: 'Somerset',
-      topic: 'FDX Basketball Performence',
-      date:"Aug 7-13",
-      participants: 35,
-      buttonName:"Interested"
+      topic: 'ARM BEGINEER',
+      date:"4 EXERCISES",
+      
     },
     // Add more upcoming events here
   ];
@@ -96,7 +98,7 @@ const HomeScreen = ({navigation}) => {
         </View>
 
         {/* Recommended Section */}
-        <Text style={{ fontSize: fontSizes.fontLarge, fontWeight: '500', marginLeft: '6%' ,marginBottom:'5%',color:colors.black}}>
+        <Text style={{ fontSize: fontSizes.fontLarge, fontWeight: '700', marginLeft: '6%' ,marginBottom:'5%',color:colors.black}}>
           Up Comming
         </Text>
         <FlatList
@@ -116,14 +118,14 @@ const HomeScreen = ({navigation}) => {
         />
 
         {/* Upcoming Section */}
-        <Text style={{ fontSize: fontSizes.fontLarge, fontWeight: '500', marginLeft: '6%', marginTop: '5%',color:colors.black }}>
+        <Text style={{ fontSize: fontSizes.fontLarge, fontWeight: '700', marginLeft: '6%', marginTop: '5%',color:colors.black }}>
         Recommended for You
         </Text>
         <FlatList
           data={upcomingEvents}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={handlePredict}>
+            <TouchableOpacity onPress={handleExerciseScreen1}>
             <SliderCardComponent
               category={item.category}
               topic={item.topic}

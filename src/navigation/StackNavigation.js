@@ -9,6 +9,9 @@ import SignUpScreen2 from "../views/SignUpScreen2";
 import HomeScreen from "../views/HomeScreen";
 import PredictScreen from "../views/PredictScreen";
 import DietPlanScreen from "../views/DietPlanScreen";
+import ExerciseScreen1 from "../views/ExerciseScreen1";
+import ExerciseScreen2 from "../views/ExerciseScreen2";
+import ExerciseScreen3 from "../views/ExerciseScreen3";
 //import NotificationScreen from "../views/NotificationScreen";
 //import ChatScreen from "../views/ChatScreen";
 
@@ -34,6 +37,9 @@ const StackNavigation = () => {
         <Stack.Screen name="SignUpScreen2" component={SignUpScreen2}/>
         {/* <Stack.Screen name="VerificationScreen" component={VerificationScreen}/> */}
         <Stack.Screen name="HomeScreen" component={HomeScreen}/>
+        <Stack.Screen name="ExerciseScreen1" component={ExerciseScreen1}/>
+        <Stack.Screen name="ExerciseScreen2" component={ExerciseScreen2}/>
+        <Stack.Screen name="ExerciseScreen3" component={ExerciseScreen3}/>
         <Stack.Screen name="PredictScreen" component={PredictScreen}/>
         <Stack.Screen name="DietPlanScreen" component={DietPlanScreen}/>
         {/* <Stack.Screen name="HomeScreen" component={ClassifiedNavigation}/>
