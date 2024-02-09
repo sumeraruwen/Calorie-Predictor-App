@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity,ScrollView } from 'react-native';
 import ButtonComponent from '../components/ButtonComponent';
 import { colors,dimensions,fontSizes } from '../styles/constants';
+import axios from 'axios';
+
 
 const SignUpScreen1 = ({navigation}) => {
 
@@ -16,18 +18,31 @@ const SignUpScreen1 = ({navigation}) => {
         
        
       };
-      const handleNextPress = () => {
-        navigation.navigate('SignUpScreen2');
+      const handleNextPress = async () => {
+        try {
+          const response = await axios.post('http://192.168.1.101:8000/users/', {
+            name,
+            email,
+            phone,
+            password
+          });
+      
+          console.log('Sign-up successful:', response.data);
+          navigation.navigate('SignIn');
+        } catch (error) {
+          console.error('Error during sign-up:', error.message);
+          // Handle errors
+        }
       };
       const handleSignIn = () => {
         navigation.navigate('SignIn');
         
       };
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
 
  
@@ -41,21 +56,14 @@ const SignUpScreen1 = ({navigation}) => {
      
         <View style={styles.mainContainer} >
       <View style={styles.inputContainer}>
-        <Text style={styles.text1}>First Name</Text>
+        <Text style={styles.text1}>Name</Text>
         <TextInput
           style={styles.input}
          // placeholder="Enter your email"
-          onChangeText={(text) => setFirstName(text)}
+          onChangeText={(text) => setName(text)}
         />
       </View>
-      <View style={styles.inputContainer}>
-        <Text style={styles.text1}>Last Name</Text>
-        <TextInput
-          style={styles.input}
-         // placeholder="Enter your password"
-          onChangeText={(text) => setLastName(text)}
-        />
-      </View>
+    
       <View style={styles.inputContainer}>
         <Text style={styles.text1} >E-mail</Text>
         <TextInput
@@ -84,12 +92,21 @@ const SignUpScreen1 = ({navigation}) => {
           style={styles.input}
           keyboardType="numeric"
          // placeholder="Enter your email"
-          onChangeText={(text) => setPhoneNumber(text)}
+          onChangeText={(text) => setPhone(text)}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Text style={styles.text1}>Password</Text>
+        <TextInput
+          style={styles.input}
+         // placeholder="Enter your password"
+          secureTextEntry={true}
+          onChangeText={(text) => setPassword(text)}
         />
       </View>
       <View style={{ alignItems: 'center' }}>
           <ButtonComponent
-            text="Next"
+            text="Submit"
             onPress={handleNextPress}
             customStyles={customStyles}
           />
