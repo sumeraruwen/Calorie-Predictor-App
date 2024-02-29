@@ -3,10 +3,12 @@ import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import axios from 'axios';
 import { colors, dimensions, fontSizes } from '../styles/constants';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Picker } from '@react-native-picker/picker';
 
-//const apiUrl = 'http://127.0.0.1:8000//predict_calories'; 
+
+
 const apiUrl = 'http://192.168.160.249:8000/predict_calories';
-//const apiUrl = 'https://restcountries.com/v3.1/name/eesti';
+
 
 const PredictScreen = ({navigation}) => {
   const [inputs, setInputs] = useState({
@@ -70,12 +72,17 @@ const PredictScreen = ({navigation}) => {
     <View style={styles.container}>
        <Text style={styles.heading1}>Congratulations you are sucessfully completed the exercises ..!</Text>
       <Text style={styles.heading2}>CHECK YOUR CALORIES</Text>
-      <TextInput
-        placeholder="Gender"
-        value={inputs.Gender}
-        style={styles.textInput}
-        onChangeText={(text) => handleInputChange('Gender', text)}
-      />
+      {/* Gender Picker */}
+      <Picker
+        selectedValue={inputs.Gender}
+        style={styles.picker}
+        onValueChange={(itemValue, itemIndex) => handleInputChange('Gender', itemValue)}
+      >
+        <Picker.Item label="Select Gender" value="" />
+        <Picker.Item label="Male" value="0" />
+        <Picker.Item label="Female" value="1" />
+      </Picker>
+
        <TextInput
         placeholder="Age"
         value={inputs.Age}
@@ -143,6 +150,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  picker: {
+    borderWidth: 1,
+    borderRadius: 5,
+    width: 200,
+    marginBottom: 20,
+    borderColor: 'black',
+  },
   textInput:{
     borderWidth: 1,
     borderRadius: 5,
@@ -203,6 +217,12 @@ const styles = StyleSheet.create({
 export default PredictScreen;
 
 
+<<<<<<< HEAD
+=======
+ 
+
+
+>>>>>>> a30159cd9d5a81a2b32c188360194a41b0c66642
 // import React, { useState } from 'react';
 // import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 // import axios from 'axios';

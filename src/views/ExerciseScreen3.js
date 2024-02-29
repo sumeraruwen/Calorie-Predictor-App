@@ -13,8 +13,8 @@ const ExerciseScreen3 = () => {
   return (
     <ExerciseComponent
       videoSource={require('../assets/ex7.mp4')}
-      exerciseName="RUSSIAN TWIST"
-      exerciseCount="x 16"
+      exerciseName="LUNGES"
+      exerciseCount="x 10"
       buttonText="DONE"
       onPress={handlePredict}
     />
