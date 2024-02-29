@@ -34,7 +34,7 @@ const StackNavigation = () => {
         <Stack.Screen name="WelcomeScreen"component={WelcomeScreen}/>
         <Stack.Screen name="SignIn" component={SignInScreen}/>
         <Stack.Screen name="SignUpScreen1" component={SignUpScreen1}/>
-        <Stack.Screen name="SignUpScreen2" component={SignUpScreen2}/>
+        {/* <Stack.Screen name="SignUpScreen2" component={SignUpScreen2}/> */}
         {/* <Stack.Screen name="VerificationScreen" component={VerificationScreen}/> */}
         <Stack.Screen name="HomeScreen" component={HomeScreen}/>
         <Stack.Screen name="ExerciseScreen1" component={ExerciseScreen1}/>

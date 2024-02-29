@@ -40,7 +40,7 @@ const MainHeaderComponent = ({userImage }) => {
         
         /> */}
         <TouchableOpacity onPress={toggleDrawer}>
-        {/* <Image
+        <Image
           source={require('../assets/menu_icon.webp')} // Menu icon image
           style={{
             
@@ -50,20 +50,20 @@ const MainHeaderComponent = ({userImage }) => {
            // width: 20,
            // height: 25,
           }}
-        /> */}
+        />
         </TouchableOpacity>
       
       <Text style={{ flex: 1, textAlign: 'center', fontWeight: '700',color:"#000",fontSize:fontSizes.fontXXLarge }}>
        FitAdapt Pro
       </Text>
-      {/* <Image
+      <Image
         source={require('../assets/profile_icon.webp')}
         style={{
           width: 40,
           height: 40,
           borderRadius: 25,
         }}
-      /> */}
+      />
 
 
     </View>

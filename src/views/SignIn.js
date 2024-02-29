@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity,ScrollView,Image } from 'react-native';
 import ButtonComponent from '../components/ButtonComponent';
+import axios from 'axios';
 import { colors, dimensions,fontSizes } from '../styles/constants';
 
 const SignInScreen = ({navigation}) => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
     const customStyles = {
         backgroundColor: 'black',
@@ -15,17 +19,34 @@ const SignInScreen = ({navigation}) => {
        
       };
 
-      const handleSignIn = () => {
-        navigation.navigate('HomeScreen');
+      // const handleSignIn = () => {
+      //   navigation.navigate('HomeScreen');
         
+      // };
+
+      const handleSignIn = async () => {
+        try {
+          const response = await axios.post('http://192.168.160.249:8000/signin/', {
+            email,
+            password,
+          });
+    
+         console.log('Sign-in successful:', response.data);
+          navigation.navigate('HomeScreen');
+        } catch (error) {
+          console.error('Error during sign-in:', error.message);
+          // Handle errors
+        }
       };
+    
+
       const handleSignUp = () => {
         navigation.navigate('SignUpScreen1');
         
       };
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -200,3 +221,5 @@ const styles = StyleSheet.create({
 });
 
 export default SignInScreen;
+
+
